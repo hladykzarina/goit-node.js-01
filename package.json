@@ -1,0 +1,21 @@
+{
+  "name": "goit-node.js-01",
+  "version": "1.0.0",
+  "description": "cli app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "start:dev": "nodemon index"
+  },
+  "author": "Zarina Hladyk",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "nodemon": "^3.0.2",
+    "uuid": "^9.0.1"
+  }
+}
