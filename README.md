@@ -1,13 +1,13 @@
 # goit-node.js-01
 
 (node index.js --action="list")
-https://ibb.co/Kyf6qPM
+https://ibb.co/S7DCMXZ
 
 (node index.js --action="get" --id 05olLMgyVQdWRwgKfg5J6)
-https://ibb.co/47tx4bt
+https://ibb.co/Tvzszn0
 
 (node index.js --action="add" --name Mango --email mango@gmail.com --phone 322-22-22)
-https://ibb.co/mB6QZyR
+https://ibb.co/QpLnvp5
 
 (node index.js --action="remove" --id qdggE76Jtbfd9eWJHrssH)
-https://ibb.co/23GTmk0
+https://ibb.co/nmjCLQK
