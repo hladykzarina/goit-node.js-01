@@ -1,6 +1,5 @@
 const { Command } = require('commander');
 const program = new Command();
-const { v4 } = require('uuid');
 
 const { listContacts, getContactsById, removeContact, addContact } = require('./contacts');
 
@@ -16,30 +15,34 @@ program.parse(process.argv);
 const argv = program.opts();
 
 async function invokeAction({ action, id, name, email, phone }) {
-  const contactsList = await listContacts();
-  switch (action) {
-    case 'list':
-      console.table(contactsList);
-      break;
+  try {
+    const contactsList = await listContacts();
+    switch (action) {
+      case 'list':
+        console.table(contactsList);
+        break;
 
-    case 'get':
-      console.log(argv);
-      const contactById = await getContactsById(id);
-      console.log(contactById);
-      break;
+      case 'get':
+        console.log(argv);
+        const contactById = await getContactsById(id);
+        console.log(contactById);
+        break;
 
-    case 'add':
-      const addedContact = await await addContact(name, email, phone);
-      console.log(addedContact);
-      break;
+      case 'add':
+        const addedContact = await addContact(name, email, phone);
+        console.log(addedContact);
+        break;
 
-    case 'remove':
-      const removedContacts = await await removeContact(id);
-      console.log(removedContacts);
-      break;
+      case 'remove':
+        const removedContacts = await removeContact(id);
+        console.log(removedContacts);
+        break;
 
-    default:
-      console.warn('\x1B[31m Unknown action type!');
+      default:
+        console.warn('\x1B[31m Unknown action type!');
+    }
+  } catch (error) {
+    throw error;
   }
 }
 
